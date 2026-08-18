@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#0e0e10" />
+    <title>AudioGram</title>
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>AudioGram</h1>
+      <p class="sub">Audiogram su sfondo verde per chroma key</p>
+
+      <section class="card">
+        <label class="drop" id="drop" for="file">
+          <input type="file" id="file" accept="audio/*" hidden />
+          <span class="drop-text" id="drop-text">Scegli un file audio</span>
+          <span class="drop-hint">oppure trascinalo qui</span>
+        </label>
+      </section>
+
+      <section class="card" id="panel" hidden>
+        <div class="field">
+          <label for="track-name">Nome (opzionale)</label>
+          <input type="text" id="track-name" placeholder="Titolo del brano" maxlength="60" />
+        </div>
+
+        <div class="field">
+          <label>Colore delle onde</label>
+          <div class="color-row">
+            <input type="color" id="color" value="#FFFFFF" />
+            <div class="presets" id="presets"></div>
+          </div>
+        </div>
+
+        <p class="warning" id="warning" hidden>Colore troppo simile allo sfondo verde: verrebbe rimosso dal chroma key.</p>
+
+        <div class="preview">
+          <canvas id="preview" width="1080" height="1080"></canvas>
+          <div class="controls">
+            <button id="play" type="button">Play</button>
+            <input type="range" id="seek" min="0" max="100" value="0" step="0.1" />
+            <span id="time">0:00 / 0:00</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="render" type="button">Genera video</button>
+          <div class="progress" id="progress-wrap" hidden>
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+          <a id="download" class="download disabled">Scarica video</a>
+        </div>
+
+        <p class="status" id="status"></p>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

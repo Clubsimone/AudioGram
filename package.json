@@ -1,0 +1,19 @@
+{
+  "name": "audiogram",
+  "version": "1.0.0",
+  "description": "Audiogram su sfondo verde per chroma key",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "audio-decode": "^3.12.0",
+    "mp4-muxer": "^5.2.2"
+  },
+  "devDependencies": {
+    "vite": "^8.2.1"
+  }
+}
